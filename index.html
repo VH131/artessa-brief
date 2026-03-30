@@ -4,102 +4,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Анкета: Artessa Home</title>
+  <title>Детальний Бриф: Artessa Home</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .focus-ring:focus {
+      border-color: #EAB308;
+      ring: 2px;
+      ring-color: #EAB308;
+      outline: none;
     }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900 py-12 px-4">
-  <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+<body class="bg-slate-50 text-slate-900 py-12 px-4">
+  <div class="max-w-3xl mx-auto bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-slate-100">
 
-    <div class="flex items-center mb-10">
-      <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
-        <span class="text-2xl">✨</span>
+    <div class="text-center mb-16">
+      <div
+        class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-yellow-700 uppercase bg-yellow-100 rounded-full">
+        Технічне завдання v2.0
       </div>
-      <div>
-        <h1 class="text-2xl font-extrabold tracking-tight">Артесса Дім</h1>
-        <p class="text-gray-500 text-sm italic">Анкета з дизайну веб-сайту</p>
-      </div>
+      <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 mb-4">Artessa Home</h1>
+      <p class="text-slate-500 max-w-md mx-auto">Заповни цю анкету максимально детально. На основі цих відповідей
+        штучний інтелект створить тексти та структуру твого майбутнього сайту.</p>
     </div>
 
-    <form action="https://formspree.io/f/mlgobwjr" method="POST" class="space-y-8">
+    <form action="https://formspree.io/f/mlgobwjr" method="POST" class="space-y-12">
 
-      <div class="space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Контакти та Техніка</h2>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Точна назва для сайту</label>
-          <input type="text" name="company_name" required placeholder="Напр: Artessa Home Mława"
-            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+      <div class="space-y-6">
+        <h2 class="flex items-center text-xl font-bold text-slate-800">
+          <span
+            class="flex items-center justify-center w-8 h-8 mr-3 text-sm bg-slate-900 text-white rounded-lg">01</span>
+          Бренд та Основи
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Назва компанії (як писати на сайті)</label>
+            <input type="text" name="company_name_exact" required placeholder="Напр: Artessa Home Mława"
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Бажана адреса сайту (Домен)</label>
+            <input type="text" name="desired_domain" placeholder="artessahome.pl"
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
         </div>
-
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Домен (адреса сайту)</label>
-          <input type="text" name="domain" placeholder="Напр: artessahome.pl або бажана назва"
-            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Слоган або місія</label>
+          <input type="text" name="slogan" placeholder="Напр: Мистецтво на твоїх стінах"
+            class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
         </div>
       </div>
 
-      <div class="space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Послуги та SEO</h2>
+      <hr class="border-slate-100">
 
+      <div class="space-y-6">
+        <h2 class="flex items-center text-xl font-bold text-slate-800">
+          <span
+            class="flex items-center justify-center w-8 h-8 mr-3 text-sm bg-slate-900 text-white rounded-lg">02</span>
+          Послуги та Специфікація
+        </h2>
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Перелік послуг (через кому)</label>
-          <textarea name="services" rows="3" required placeholder="Мікроцемент, венеціанка, фарбування..."
-            class="w-full border-2 border-gray-100 rounded-xl p-3 outline-none focus:border-yellow-500 transition-colors bg-gray-50"></textarea>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Повний перелік послуг (через кому)</label>
+          <textarea name="full_service_list" rows="3" required
+            placeholder="Мікроцемент, венеціанка, травертин, штукатурка 'крокодил', імітація бетону, художні скульптури, фарбування, монтаж ГКЛ..."
+            class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus-ring transition-all"></textarea>
         </div>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Пріоритетна послуга (найдорожча)</label>
+            <input type="text" name="top_priority_service" placeholder="Напр: Мікроцемент / Скульптури"
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">З якими брендами працюєш?</label>
+            <input type="text" name="material_brands" placeholder="Напр: Oikos, Benjamin Moore..."
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
+        </div>
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Географія роботи (міста)</label>
-          <input type="text" name="location" placeholder="Млава + 50км, Варшава..."
-            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Цінова політика</label>
+          <select name="pricing_strategy"
+            class="w-full border-b-2 border-slate-200 py-3 focus-ring bg-transparent transition-all">
+            <option value="hide">Не вказувати ціни на сайті</option>
+            <option value="start_from">Вказати ціни "Від ... zł/m2"</option>
+            <option value="calculator">Потрібна форма для розрахунку</option>
+          </select>
         </div>
       </div>
 
-      <div class="space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Контент та Фото</h2>
+      <hr class="border-slate-100">
 
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Посилання на фото (Google Drive / iCloud)</label>
-          <input type="url" name="photos_url" placeholder="https://drive.google.com/..."
-            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+      <div class="space-y-6">
+        <h2 class="flex items-center text-xl font-bold text-slate-800">
+          <span
+            class="flex items-center justify-center w-8 h-8 mr-3 text-sm bg-slate-900 text-white rounded-lg">03</span>
+          Локація та Клієнти
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Міста роботи (SEO-локації)</label>
+            <input type="text" name="cities_covered" placeholder="Mława, Ciechanów, Warszawa..."
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Номер телефону для зв'язку</label>
+            <input type="tel" name="phone_public" required placeholder="+48 XXX XXX XXX"
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
         </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Ваші переваги (чому ви?)</label>
-          <textarea name="advantages" rows="2" placeholder="10 років досвіду, італійські матеріали..."
-            class="w-full border-2 border-gray-100 rounded-xl p-3 outline-none focus:border-yellow-500 transition-colors bg-gray-50"></textarea>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Адреса шоуруму / офісу</label>
+            <input type="text" name="office_address" placeholder="Mława, Stary Rynek 12a"
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">Графік роботи</label>
+            <input type="text" name="working_hours" placeholder="Пн-Пт: 09:00 - 18:00"
+              class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          </div>
         </div>
       </div>
 
-      <div class="space-y-4">
-        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Очікування</h2>
+      <hr class="border-slate-100">
 
-        <div class="space-y-2">
-          <p class="text-sm font-medium text-gray-700">Коли ви хочете, щоб вебсайт був готовий?</p>
-          <label class="flex items-center space-x-3 text-sm">
-            <input type="radio" name="deadline" value="1-2 weeks" class="text-yellow-500 focus:ring-yellow-500">
-            <span>Якомога швидше (1-2 тижні)</span>
-          </label>
-          <label class="flex items-center space-x-3 text-sm">
-            <input type="radio" name="deadline" value="1 month" class="text-yellow-500 focus:ring-yellow-500">
-            <span>Протягом місяця</span>
-          </label>
+      <div class="space-y-6">
+        <h2 class="flex items-center text-xl font-bold text-slate-800">
+          <span
+            class="flex items-center justify-center w-8 h-8 mr-3 text-sm bg-slate-900 text-white rounded-lg">04</span>
+          Контент та Довіра
+        </h2>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Лінк на фото робіт (Google Drive / iCloud /
+            Dropbox)</label>
+          <input type="url" name="portfolio_link" required placeholder="https://drive.google.com/..."
+            class="w-full border-b-2 border-slate-200 py-3 focus-ring transition-all">
+          <p class="text-[10px] text-slate-400 mt-2 italic">* Важливо: Додай фото шоуруму та фото готових інтер'єрів</p>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Чому клієнт має обрати саме Вас? (Твої
+            переваги)</label>
+          <textarea name="unique_selling_points" rows="4"
+            placeholder="Напр: 10 років досвіду, безкоштовний замір, авторські техніки скульптури, гарантія на покриття 5 років..."
+            class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus-ring transition-all"></textarea>
+        </div>
+        <div class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+          <p class="text-sm font-semibold text-slate-700 mb-4">Відгуки клієнтів</p>
+          <div class="flex items-center space-x-6">
+            <label class="flex items-center text-sm cursor-pointer">
+              <input type="radio" name="reviews_status" value="ready" class="mr-2 accent-slate-900"> Маю готові
+              тексти/скріншоти
+            </label>
+            <label class="flex items-center text-sm cursor-pointer">
+              <input type="radio" name="reviews_status" value="need_collection" class="mr-2 accent-slate-900"> Треба
+              зібрати з Google Maps
+            </label>
+          </div>
         </div>
       </div>
 
-      <div class="pt-6">
+      <div class="pt-10">
         <button type="submit"
-          class="w-full bg-black text-white font-bold py-4 rounded-full hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
-          Надіслати анкету розробнику
+          class="group relative w-full bg-slate-900 text-white font-bold py-5 rounded-2xl overflow-hidden transition-all hover:bg-black active:scale-95 shadow-2xl">
+          <span class="relative z-10">ВІДПРАВИТИ БРИФ РОЗРОБНИКУ</span>
+          <div
+            class="absolute inset-0 bg-yellow-500 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300 ease-out opacity-10">
+          </div>
         </button>
-        <p class="text-center text-[10px] text-gray-400 mt-4 uppercase tracking-tighter">
-          Powered by Formspree API
+        <p class="text-center text-[10px] text-slate-400 mt-6 uppercase tracking-[0.2em] font-bold">
+          Secure Data Transmission via Formspree API
         </p>
       </div>
 
