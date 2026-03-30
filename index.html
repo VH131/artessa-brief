@@ -1,212 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
 
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: var(--font-sans); }
-  .form-wrap { max-width: 640px; padding: 2rem 1rem; }
-  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); }
-  .brand-circle { width: 44px; height: 44px; border-radius: 50%; background: #f5e8c0; display: flex; align-items: center; justify-content: center; font-size: 18px; }
-  .brand-name { font-size: 18px; font-weight: 500; color: var(--color-text-primary); }
-  .brand-sub { font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
-  .section { margin-bottom: 2rem; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 1rem; padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary); }
-  .field { margin-bottom: 1.25rem; }
-  .field label { display: block; font-size: 14px; color: var(--color-text-primary); margin-bottom: 6px; font-weight: 500; }
-  .field .hint { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 6px; }
-  .field input[type="text"],
-  .field input[type="tel"],
-  .field input[type="email"],
-  .field textarea,
-  .field select { width: 100%; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); padding: 9px 12px; font-size: 14px; font-family: var(--font-sans); background: var(--color-background-primary); color: var(--color-text-primary); outline: none; transition: border-color 0.15s; }
-  .field input:focus,
-  .field textarea:focus,
-  .field select:focus { border-color: var(--color-border-primary); }
-  .field textarea { resize: vertical; min-height: 80px; line-height: 1.5; }
-  .radio-group, .check-group { display: flex; flex-direction: column; gap: 8px; }
-  .radio-item, .check-item { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
-  .radio-item input, .check-item input { margin-top: 3px; accent-color: var(--color-text-primary); cursor: pointer; }
-  .radio-item span, .check-item span { font-size: 14px; color: var(--color-text-primary); }
-  .submit-btn { width: 100%; padding: 12px; background: var(--color-text-primary); color: var(--color-background-primary); border: none; border-radius: var(--border-radius-md); font-size: 15px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; margin-top: 0.5rem; font-family: var(--font-sans); }
-  .submit-btn:hover { opacity: 0.85; }
-  .success { display: none; text-align: center; padding: 3rem 1rem; }
-  .success-icon { font-size: 32px; margin-bottom: 1rem; }
-  .success h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: var(--color-text-primary); }
-  .success p { font-size: 14px; color: var(--color-text-secondary); }
-  .progress { display: flex; gap: 4px; margin-bottom: 2rem; }
-  .progress-dot { height: 3px; flex: 1; border-radius: 2px; background: var(--color-border-tertiary); transition: background 0.3s; }
-  .progress-dot.active { background: var(--color-text-primary); }
-  .required { color: var(--color-text-secondary); font-weight: 400; }
-</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анкета: Artessa Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
 
-<div class="form-wrap">
-  <div class="brand">
-    <div class="brand-circle">✦</div>
-    <div>
-      <div class="brand-name">Artessa Home</div>
-      <div class="brand-sub">Kwestionariusz do projektu strony internetowej</div>
+<body class="bg-gray-50 text-gray-900 py-12 px-4">
+  <div class="max-w-2xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+
+    <div class="flex items-center mb-10">
+      <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+        <span class="text-2xl">✨</span>
+      </div>
+      <div>
+        <h1 class="text-2xl font-extrabold tracking-tight">Артесса Дім</h1>
+        <p class="text-gray-500 text-sm italic">Анкета з дизайну веб-сайту</p>
+      </div>
     </div>
+
+    <form action="https://formspree.io/f/mlgobwjr" method="POST" class="space-y-8">
+
+      <div class="space-y-4">
+        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Контакти та Техніка</h2>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Точна назва для сайту</label>
+          <input type="text" name="company_name" required placeholder="Напр: Artessa Home Mława"
+            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Домен (адреса сайту)</label>
+          <input type="text" name="domain" placeholder="Напр: artessahome.pl або бажана назва"
+            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Послуги та SEO</h2>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Перелік послуг (через кому)</label>
+          <textarea name="services" rows="3" required placeholder="Мікроцемент, венеціанка, фарбування..."
+            class="w-full border-2 border-gray-100 rounded-xl p-3 outline-none focus:border-yellow-500 transition-colors bg-gray-50"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Географія роботи (міста)</label>
+          <input type="text" name="location" placeholder="Млава + 50км, Варшава..."
+            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Контент та Фото</h2>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Посилання на фото (Google Drive / iCloud)</label>
+          <input type="url" name="photos_url" placeholder="https://drive.google.com/..."
+            class="w-full border-b-2 border-gray-200 py-2 outline-none focus:border-yellow-500 transition-colors">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Ваші переваги (чому ви?)</label>
+          <textarea name="advantages" rows="2" placeholder="10 років досвіду, італійські матеріали..."
+            class="w-full border-2 border-gray-100 rounded-xl p-3 outline-none focus:border-yellow-500 transition-colors bg-gray-50"></textarea>
+        </div>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-xs uppercase tracking-widest font-bold text-gray-400">Очікування</h2>
+
+        <div class="space-y-2">
+          <p class="text-sm font-medium text-gray-700">Коли ви хочете, щоб вебсайт був готовий?</p>
+          <label class="flex items-center space-x-3 text-sm">
+            <input type="radio" name="deadline" value="1-2 weeks" class="text-yellow-500 focus:ring-yellow-500">
+            <span>Якомога швидше (1-2 тижні)</span>
+          </label>
+          <label class="flex items-center space-x-3 text-sm">
+            <input type="radio" name="deadline" value="1 month" class="text-yellow-500 focus:ring-yellow-500">
+            <span>Протягом місяця</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-6">
+        <button type="submit"
+          class="w-full bg-black text-white font-bold py-4 rounded-full hover:bg-gray-800 transition-all active:scale-95 shadow-lg">
+          Надіслати анкету розробнику
+        </button>
+        <p class="text-center text-[10px] text-gray-400 mt-4 uppercase tracking-tighter">
+          Powered by Formspree API
+        </p>
+      </div>
+
+    </form>
   </div>
+</body>
 
-  <div class="progress" id="progress">
-    <div class="progress-dot active"></div>
-    <div class="progress-dot active"></div>
-    <div class="progress-dot active"></div>
-    <div class="progress-dot active"></div>
-    <div class="progress-dot active"></div>
-  </div>
-
-  <form id="main-form">
-
-    <div class="section">
-      <div class="section-label">Podstawowe informacje</div>
-      <div class="field">
-        <label>Pełna nazwa firmy <span class="required">*</span></label>
-        <input type="text" placeholder="np. Artessa Home" required />
-      </div>
-      <div class="field">
-        <label>Telefon kontaktowy <span class="required">*</span></label>
-        <input type="tel" placeholder="np. 730 076 742" required />
-      </div>
-      <div class="field">
-        <label>Adres e-mail do kontaktu <span class="required">*</span></label>
-        <div class="hint">Najlepiej firmowy, np. kontakt@artessahome.pl</div>
-        <input type="email" placeholder="kontakt@artessahome.pl" required />
-      </div>
-      <div class="field">
-        <label>Adres fizyczny / showroom</label>
-        <input type="text" placeholder="np. Stary Rynek 12a, Mława" />
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-label">Klienci i rynek</div>
-      <div class="field">
-        <label>Do kogo kierujecie swoje usługi? <span class="required">*</span></label>
-        <div class="check-group">
-          <label class="check-item"><input type="checkbox" /><span>Osoby prywatne (mieszkania, domy)</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Deweloperzy i firmy budowlane</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Projektanci wnętrz / architekci</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Firmy i biura (przestrzenie komercyjne)</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Obszar działania <span class="required">*</span></label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="area" /><span>Tylko Mława</span></label>
-          <label class="radio-item"><input type="radio" name="area" /><span>Mława i okolice (do 50 km)</span></label>
-          <label class="radio-item"><input type="radio" name="area" /><span>Całe Mazowsze</span></label>
-          <label class="radio-item"><input type="radio" name="area" /><span>Cała Polska</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Co wyróżnia was na tle konkurencji?</label>
-        <div class="hint">Np. unikalne techniki, doświadczenie, czas realizacji, cena</div>
-        <textarea placeholder="Wpisz co Was wyróżnia..."></textarea>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-label">Usługi</div>
-      <div class="field">
-        <label>Które usługi są dla Was najważniejsze? <span class="required">*</span></label>
-        <div class="hint">Wybierz maksymalnie 3 — te, które chcecie promować na stronie głównej</div>
-        <div class="check-group">
-          <label class="check-item"><input type="checkbox" /><span>Tynki dekoracyjne (sprzedaż + aplikacja)</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Farby dekoracyjne i efekty specjalne</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Malowanie ścian</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Płaskorzeźby artystyczne</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Zabudowy GKL (gipsokartony)</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Topaz / polerowane podłogi</span></label>
-          <label class="check-item"><input type="checkbox" /><span>Elewacje</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Orientacyjny przedział cenowy usług</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="price" /><span>Do 2 000 zł / projekt</span></label>
-          <label class="radio-item"><input type="radio" name="price" /><span>2 000 – 10 000 zł</span></label>
-          <label class="radio-item"><input type="radio" name="price" /><span>10 000 – 30 000 zł</span></label>
-          <label class="radio-item"><input type="radio" name="price" /><span>Powyżej 30 000 zł</span></label>
-          <label class="radio-item"><input type="radio" name="price" /><span>Wolę nie podawać</span></label>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-label">Materiały i zdjęcia</div>
-      <div class="field">
-        <label>Ile zdjęć gotowych realizacji możecie udostępnić? <span class="required">*</span></label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="photos" /><span>Brak — trzeba zrobić nowe</span></label>
-          <label class="radio-item"><input type="radio" name="photos" /><span>1–5 zdjęć</span></label>
-          <label class="radio-item"><input type="radio" name="photos" /><span>6–20 zdjęć</span></label>
-          <label class="radio-item"><input type="radio" name="photos" /><span>Powyżej 20 zdjęć</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Czy macie materiały wideo (Reels, proces pracy)?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="video" /><span>Tak, mamy gotowe</span></label>
-          <label class="radio-item"><input type="radio" name="video" /><span>Nie, ale możemy nagrać</span></label>
-          <label class="radio-item"><input type="radio" name="video" /><span>Nie planujemy</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Czy macie opinie zadowolonych klientów?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="reviews" /><span>Tak, pisemne / screenshoty</span></label>
-          <label class="radio-item"><input type="radio" name="reviews" /><span>Możemy poprosić klientów o opinie</span></label>
-          <label class="radio-item"><input type="radio" name="reviews" /><span>Nie mamy na razie</span></label>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-label">Oczekiwania i terminy</div>
-      <div class="field">
-        <label>Kiedy chcecie mieć gotową stronę? <span class="required">*</span></label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="deadline" /><span>Jak najszybciej (1–2 tygodnie)</span></label>
-          <label class="radio-item"><input type="radio" name="deadline" /><span>W ciągu miesiąca</span></label>
-          <label class="radio-item"><input type="radio" name="deadline" /><span>2–3 miesiące</span></label>
-          <label class="radio-item"><input type="radio" name="deadline" /><span>Nie ma konkretnego terminu</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Kto będzie aktualizował stronę po uruchomieniu?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="update" /><span>Chcę robić to samodzielnie</span></label>
-          <label class="radio-item"><input type="radio" name="update" /><span>Potrzebuję kogoś do pomocy</span></label>
-          <label class="radio-item"><input type="radio" name="update" /><span>Jeszcze nie wiem</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Czy macie już domenę?</label>
-        <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="domain" /><span>Tak, mamy</span></label>
-          <label class="radio-item"><input type="radio" name="domain" /><span>Nie, trzeba kupić</span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label>Dodatkowe uwagi lub pytania</label>
-        <textarea placeholder="Cokolwiek chcecie przekazać na start..."></textarea>
-      </div>
-    </div>
-
-    <button type="submit" class="submit-btn">Wyślij kwestionariusz</button>
-  </form>
-
-  <div class="success" id="success">
-    <div class="success-icon">✦</div>
-    <h3>Dziękujemy za wypełnienie!</h3>
-    <p>Odpowiedzi zostały zapisane.<br>Odezwiemy się wkrótce.</p>
-  </div>
-</div>
-
-<script>
-  document.getElementById('main-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('success').style.display = 'block';
-    document.getElementById('progress').querySelectorAll('.progress-dot').forEach(d => d.style.background = 'var(--color-text-primary)');
-  });
-</script>
+</html>
